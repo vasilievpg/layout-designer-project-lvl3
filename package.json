@@ -1,0 +1,22 @@
+{
+  "name": "layout-designer-project-lvl3",
+  "version": "1.0.0",
+  "description": "Проект #3: Мессенджер «Hexlet Chat»",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasilievpg/layout-designer-project-lvl3.git"
+  },
+  "author": "Pavel Vasilev",
+  "license": "ISC",
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
