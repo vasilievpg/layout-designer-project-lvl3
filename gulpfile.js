@@ -51,7 +51,9 @@ function pug2html() {
         'app/pages/index.pug',
         'app/pages/chat.pug'
     ])
-        .pipe(pug())
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(dest('./build/'))
         .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 };
