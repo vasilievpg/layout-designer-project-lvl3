@@ -22,7 +22,7 @@ const del = require('del');
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
-        server: {baseDir: 'dist/'}, // Указываем папку сервера
+        server: {baseDir: 'build/'}, // Указываем папку сервера
         notify: false, // Отключаем уведомления
         online: true // Режим работы: true или false
     })
@@ -34,7 +34,7 @@ function scripts() {
         'node_modules/bootstrap/js/dist/button.js',
     ])
         .pipe(concat('app.min.js')) // Конкатенируем в один файл
-        .pipe(dest('dist/js/')) // Выгружаем готовый файл в папку назначения
+        .pipe(dest('build/js/')) // Выгружаем готовый файл в папку назначения
         .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
 
@@ -44,7 +44,7 @@ function sass2css() {
         // Путь к главному файлу scss, который будет компилироваться
     ])
         .pipe(sass())
-        .pipe(dest('./dist/styles/'))
+        .pipe(dest('./build/styles/'))
 
         // Обработка через плагин sass, указание конечного файла и его месторасположение
 
@@ -59,7 +59,7 @@ function pug2html() {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(dest('./dist/'))
+        .pipe(dest('./build/'))
         .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
 
@@ -75,17 +75,17 @@ function svg2sprite() {
         'app/images/icons/*.svg'
     ])
         .pipe(svgSprite(config))
-        .pipe(dest('./dist/images/icons/'))
+        .pipe(dest('./build/images/icons/'))
 }
 
-function cleandist() {
-    return del('./dist/**/*', { force: true }) // Удаляем все содержимое папки "./dist/"
+function cleanbuild() {
+    return del('./build/**/*', { force: true }) // Удаляем все содержимое папки "./build/"
 }
 
 function startwatch() {
 
     // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
-    watch(['dist/**/*.js', '!dist/**/*.min.js'], scripts);
+    watch(['build/**/*.js', '!build/**/*.min.js'], scripts);
 
     // Мониторим файлы препроцессора на изменения
     watch('app/scss/app.scss', sass2css);
@@ -94,7 +94,7 @@ function startwatch() {
     watch('app/**/*.pug', pug2html);
 
     // Мониторим файлы HTML на изменения
-    watch('dist/**/*.html').on('change', browserSync.reload);
+    watch('build/**/*.html').on('change', browserSync.reload);
 }
 
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
@@ -112,8 +112,8 @@ exports.pug2html = pug2html;
 // Экспортируем функцию svg2sprite() в таск svg2sprite
 exports.svg2sprite = svg2sprite;
 
-// Экспортируем функцию cleandist() как таск cleandist
-exports.cleandist = cleandist;
+// Экспортируем функцию cleanbuild() как таск cleanbuild
+exports.cleanbuild = cleanbuild;
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = series(parallel(cleandist, sass2css, pug2html, svg2sprite, scripts), parallel(browsersync, startwatch));
+exports.default = series(parallel(cleanbuild, sass2css, pug2html, svg2sprite, scripts), parallel(browsersync, startwatch));
