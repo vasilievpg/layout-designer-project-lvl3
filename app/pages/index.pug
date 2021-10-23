@@ -1,12 +1,17 @@
 doctype html
 html(lang='ru')
   head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Главная
-    link(rel='stylesheet', href='styles/app.css', type='text/css')
-  body.pt-5
-    .container
+    include blocks/meta
+    title Started Page
+  body.pt-5.bg-gray.h-100.overflow-hidden
+    .container.bg-white.rounded.overflow-hidden.mb-5.h-100
       .row
-        .col
-          h1 Главная страница
+        .col-12.col-md-4.border-end.border-gray
+          .row
+            .col.bg-primary.text-white
+              include blocks/header
+          .row.pt-5
+            .col.px-4
+              include blocks/contacts
+        .d-none.d-md-block.col-md-8.container-xxl
+          p Правая часть

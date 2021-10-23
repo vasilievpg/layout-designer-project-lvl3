@@ -1,12 +1,17 @@
 doctype html
 html(lang='ru')
   head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Страница чата
-    link(rel='stylesheet', href='styles/app.css', type='text/css')
-  body.pt-5
-    .container
+    include blocks/meta
+    title Чаты
+  body.pt-5.bg-gray.overflow-hidden
+    .container.bg-white.rounded.overflow-hidden.vh-100
       .row
-        .col
-          h1 Страница чата
+        .col-12.col-md-4.border-end.border-gray
+          .row
+            .col.bg-primary.text-white
+              include blocks/header
+          .row.pt-5
+            .col.px-4
+              include blocks/chats-list
+        .d-none.d-md-block.col-md-8.container-xxl
+          p Правая часть
