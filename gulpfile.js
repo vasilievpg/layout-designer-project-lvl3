@@ -13,11 +13,13 @@ const sass = require('gulp-sass')(require('sass'));
 // Подключаем модуль gulp-pug
 const pug = require('gulp-pug');
 
+// Подключаем модуль gulp-svg-sprite
+const svgSprite = require('gulp-svg-sprite');
 
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
-        server: {baseDir: 'build/'}, // Указываем папку сервера
+        server: {baseDir: 'dist/'}, // Указываем папку сервера
         notify: false, // Отключаем уведомления
         online: true // Режим работы: true или false
     })
@@ -29,7 +31,7 @@ function scripts() {
         'node_modules/bootstrap/js/dist/button.js',
     ])
         .pipe(concat('app.min.js')) // Конкатенируем в один файл
-        .pipe(dest('build/js/')) // Выгружаем готовый файл в папку назначения
+        .pipe(dest('dist/js/')) // Выгружаем готовый файл в папку назначения
         .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
 
@@ -39,7 +41,7 @@ function sass2css() {
         // Путь к главному файлу scss, который будет компилироваться
     ])
         .pipe(sass())
-        .pipe(dest('./build/styles/'))
+        .pipe(dest('./dist/styles/'))
 
         // Обработка через плагин sass, указание конечного файла и его месторасположение
 
@@ -54,14 +56,29 @@ function pug2html() {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(dest('./build/'))
+        .pipe(dest('./dist/'))
         .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
+};
+
+function svg2sprite() {
+    const config = {
+        mode: {
+            stack: { // Activate the «css» mode
+                sprite: "../sprite.svg"
+            }
+        }
+    };
+    return src([
+        'app/images/icons/*.svg'
+    ])
+        .pipe(svgSprite(config))
+        .pipe(dest('./dist/images/icons/'))
 };
 
 function startwatch() {
 
     // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
-    watch(['build/**/*.js', '!build/**/*.min.js'], scripts);
+    watch(['dist/**/*.js', '!dist/**/*.min.js'], scripts);
 
     // Мониторим файлы препроцессора на изменения
     watch('app/scss/app.scss', sass2css);
@@ -70,7 +87,7 @@ function startwatch() {
     watch('app/**/*.pug', pug2html);
 
     // Мониторим файлы HTML на изменения
-    watch('build/**/*.html').on('change', browserSync.reload);
+    watch('dist/**/*.html').on('change', browserSync.reload);
 }
 
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
@@ -85,5 +102,8 @@ exports.sass2css = sass2css;
 // Экспортируем функцию pug2html() в таск pug2html
 exports.pug2html = pug2html;
 
+// Экспортируем функцию svg2sprite() в таск svg2sprite
+exports.svg2sprite = svg2sprite;
+
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = series(parallel(sass2css, pug2html, scripts), parallel(browsersync, startwatch));
+exports.default = series(parallel(sass2css, pug2html, svg2sprite, scripts), parallel(browsersync, startwatch));

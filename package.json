@@ -15,6 +15,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.0.0",
+    "gulp-svg-sprite": "^1.5.0",
     "sass": "^1.43.2",
     "stylelint": "^13.13.1",
     "stylelint-config-rational-order": "^0.1.2",
