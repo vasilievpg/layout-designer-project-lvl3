@@ -16,6 +16,9 @@ const pug = require('gulp-pug');
 // Подключаем модуль gulp-svg-sprite
 const svgSprite = require('gulp-svg-sprite');
 
+// Подключаем модуль del
+const del = require('del');
+
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
@@ -46,7 +49,7 @@ function sass2css() {
         // Обработка через плагин sass, указание конечного файла и его месторасположение
 
         .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
-};
+}
 
 function pug2html() {
     return src([
@@ -58,7 +61,7 @@ function pug2html() {
         }))
         .pipe(dest('./dist/'))
         .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
-};
+}
 
 function svg2sprite() {
     const config = {
@@ -73,7 +76,11 @@ function svg2sprite() {
     ])
         .pipe(svgSprite(config))
         .pipe(dest('./dist/images/icons/'))
-};
+}
+
+function cleandist() {
+    return del('./dist/**/*', { force: true }) // Удаляем все содержимое папки "./dist/"
+}
 
 function startwatch() {
 
@@ -105,5 +112,8 @@ exports.pug2html = pug2html;
 // Экспортируем функцию svg2sprite() в таск svg2sprite
 exports.svg2sprite = svg2sprite;
 
+// Экспортируем функцию cleandist() как таск cleandist
+exports.cleandist = cleandist;
+
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = series(parallel(sass2css, pug2html, svg2sprite, scripts), parallel(browsersync, startwatch));
+exports.default = series(parallel(cleandist, sass2css, pug2html, svg2sprite, scripts), parallel(browsersync, startwatch));
