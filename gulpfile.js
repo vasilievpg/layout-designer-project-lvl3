@@ -63,6 +63,12 @@ function pug2html() {
         .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
 
+function images() {
+    return src(['app/images/**/*', '!app/images/icons/**/*'])
+        .pipe(dest('build/images/')) // Выгружаем готовый файл в папку назначения
+        .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
+
 function svg2sprite() {
     const config = {
         mode: {
@@ -109,6 +115,9 @@ exports.sass2css = sass2css;
 // Экспортируем функцию pug2html() в таск pug2html
 exports.pug2html = pug2html;
 
+// Экспортируем функцию images() в таск images
+exports.images = images;
+
 // Экспортируем функцию svg2sprite() в таск svg2sprite
 exports.svg2sprite = svg2sprite;
 
@@ -116,4 +125,4 @@ exports.svg2sprite = svg2sprite;
 exports.cleanbuild = cleanbuild;
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = series(parallel(cleanbuild, sass2css, pug2html, svg2sprite, scripts), parallel(browsersync, startwatch));
+exports.default = series(parallel(cleanbuild, sass2css, pug2html, images, svg2sprite, scripts), parallel(browsersync, startwatch));

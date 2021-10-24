@@ -1,2 +1,7 @@
+@import "mixins";
 @import "variables";
+@import "../scss/components/avatar";
+@import "../scss/components/contact";
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.hide-scrollbar { @include hide-scrollbar; }

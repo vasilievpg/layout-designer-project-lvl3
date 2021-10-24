@@ -3,15 +3,15 @@ html(lang='ru')
   head
     include blocks/meta
     title Started Page
-  body.pt-5.pb-5.bg-gray.vh-100.overflow-hidden
-    .container.bg-white.rounded.overflow-hidden.mb-5.h-100
+  body.pt-5.pb-5.bg-gray.vh-100
+    .container.bg-white.rounded.mb-5.h-100.overflow-hidden
       .row.h-100
         .col-12.col-md-4.h-100.border-end.border-gray
           .row
             .col.bg-primary.text-white
               include blocks/header
-          .row.pt-5
-            .col.px-4
+          .row.pt-5.h-100
+            .col.px-4.h-100.overflow-scroll.hide-scrollbar
               include blocks/contacts
         .d-none.d-md-block.col-md-8.container-xxl
           p Правая часть

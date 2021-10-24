@@ -1,6 +1,53 @@
+-
+  var contacts = {
+    "A": [{
+      name: "Алексей Примадонин",
+      status: "Онлайн",
+      avatar: "/images/avatar_3.jpg"
+    }],
+
+    "В": [{
+      name: "Вениамин Редакторович",
+      status: "Онлайн",
+      avatar: "/images/avatar_4.jpg"
+    }],
+
+    "Д": [{
+      name: "Джедай Падаванов",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_2.jpg"
+    }],
+
+    "К": [{
+      name: "Кодовёнок Хекслетович",
+      status: "Был онлайн 3 часа назад",
+      avatar: "/images/avatar_1.jpg"
+    },
+      {
+        name: "Королева Верстальщина",
+        status: "Была онлайн вчера",
+        avatar: "/images/avatar_5.jpg"
+      }],
+
+    "П": [{
+      name: "Питонист Джангович",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_6.jpg"
+    }],
+  }
+
 h2.fw-bold Контакты
-p Левая часть
-p Левая часть
-p Левая часть
-p Левая часть
-p Левая часть
+
+each users, char in contacts
+  h2.text-muted.fs-6.fw-normal= char
+  each user in users
+    .list-group.list-group-flush
+      .list-group-item
+        .align-items-center.row
+          .col-auto
+            img(src=user.avatar).avatar
+          .col-auto
+            h4.mb-1.fs-6.fw-bold #{user.name}
+            p.small.text-muted.mb-0 #{user.status}
+  else
+    li Нет пользователей
