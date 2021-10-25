@@ -5,3 +5,15 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 .hide-scrollbar { @include hide-scrollbar; }
+
+@media (min-width: 767.98px) {
+  .rounded-md {
+    border-radius: 1rem !important;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .border-end-md {
+    border-right: 1px solid #dee2e6 !important;
+  }
+}

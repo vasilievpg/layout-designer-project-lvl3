@@ -36,18 +36,18 @@
     }],
   }
 
-h2.fw-bold Контакты
-
-each users, char in contacts
-  h2.text-muted.fs-6.fw-normal= char
-  each user in users
-    .list-group.list-group-flush
-      .list-group-item
-        .align-items-center.row
-          .col-auto
-            img(src=user.avatar).avatar
-          .col-auto
-            h4.mb-1.fs-6.fw-bold #{user.name}
-            p.small.text-muted.mb-0 #{user.status}
-  else
-    li Нет пользователей
+h2.h1.fw-bold.mt-5 Контакты
+.mb-5
+  each users, char in contacts
+    h2.text-muted.fs-6.fw-normal.mt-5.mb-4= char
+    each user in users
+      .list-group.list-group-flush
+        .list-group-item.shadow-sm.mb-3
+          .align-items-center.row
+            .col-auto
+              img(src=user.avatar).avatar
+            .col-auto.p-3
+              h4.mb-1.fs-6.fw-bold #{user.name}
+              p.text-muted.contact-status.mb-0 #{user.status}
+    else
+      li Нет пользователей
