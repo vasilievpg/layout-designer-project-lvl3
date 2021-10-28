@@ -42,12 +42,13 @@ h2.h1.fw-bold.mt-5 Контакты
     h2.text-muted.fs-6.fw-normal.mt-5.mb-4= char
     each user in users
       .list-group.list-group-flush
-        .list-group-item.shadow-sm.mb-3
+        .list-group-item.shadow-sm.mb-3.contact-card
           .align-items-center.row
             .col-auto
               img(src=user.avatar).avatar
             .col-auto.p-3
-              h4.mb-1.fs-6.fw-bold #{user.name}
-              p.text-muted.contact-status.mb-0 #{user.status}
+              a(href="#").stretched-link.contact-name
+                h4.mb-1.fs-6.fw-bold #{user.name}
+              .contact-status.mb-0.text-muted #{user.status}
     else
       li Нет пользователей

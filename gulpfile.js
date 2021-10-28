@@ -47,7 +47,6 @@ function sass2css() {
         .pipe(dest('./build/styles/'))
 
         // Обработка через плагин sass, указание конечного файла и его месторасположение
-
         .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
 
@@ -94,7 +93,7 @@ function startwatch() {
     watch(['build/**/*.js', '!build/**/*.min.js'], scripts);
 
     // Мониторим файлы препроцессора на изменения
-    watch('app/scss/app.scss', sass2css);
+    watch('app/scss/**/*.scss', sass2css);
 
     // Мониторим файлы препроцессора на изменения
     watch('app/**/*.pug', pug2html);
