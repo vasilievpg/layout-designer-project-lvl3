@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/app.css" type="text/css">
+    <script src="js/bootstrap.js"></script>
     <title>Started Page</title>
   </head>
   <body class="py-md-5 bg-gray vh-100">
     <div class="container bg-white mb-5 h-100 overflow-hidden rounded-md">
       <div class="row h-100">
-        <div class="col-12 col-md-4 h-100 border-gray d-flex flex-column-reverse flex-md-column border-end-md">
+        <div class="col-12 col-md-5 h-100 border-gray d-flex flex-column-reverse flex-md-column border-end-md">
           <div class="row">
             <div class="col bg-primary text-white">
               <header>
                 <div class="row">
                   <div class="col">
-                    <p>Контакты Сообщения Профиль</p>
+                    <div class="navbar py-3 ps-2"><a class="navbar-brand" href="#">
+                        <svg height="25" width="15">
+                          <use xlink:href="images/icons/sprite.svg#logo"></use>
+                        </svg></a>
+                      <ul class="nav nav-fill" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <div class="nav-link active text-white d-flex align-items-center" id="pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#pills-contacts" type="button" role="tab" aria-controls="pills-contacts" aria-selected="true">
+                            <svg class="me-2" height="25" width="25">
+                              <use xlink:href="images/icons/sprite.svg#people"></use>
+                            </svg>
+                            <div class="nav-link-text">Контакты</div>
+                          </div>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <div class="nav-link text-white d-flex align-items-center" id="pills-messages-tab" data-bs-toggle="pill" data-bs-target="#pills-messages" type="button" role="tab" aria-controls="pills-messages" aria-selected="false">
+                            <svg class="me-2" height="25" width="25">
+                              <use xlink:href="images/icons/sprite.svg#chat"></use>
+                            </svg>
+                            <div class="nav-link-text">Сообщения</div>
+                          </div>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <div class="nav-link text-white d-flex align-items-center" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                            <svg class="me-2" height="25" width="25">
+                              <use xlink:href="images/icons/sprite.svg#person"></use>
+                            </svg>
+                            <div class="nav-link-text">Профиль</div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </header>
@@ -23,85 +54,102 @@
           </div>
           <div class="row pt-5 h-100">
             <div class="col px-4 h-100 overflow-scroll hide-scrollbar">
-              <h2 class="h1 fw-bold mt-5">Контакты</h2>
-              <div class="mb-5">
-                <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">A</h2>
-                <div class="list-group list-group-flush">
-                  <div class="list-group-item shadow-sm mb-3 contact-card">
-                    <div class="align-items-center row">
-                      <div class="col-auto"><img class="avatar" src="/images/avatar_3.jpg"></div>
-                      <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
-                          <h4 class="mb-1 fs-6 fw-bold">Алексей Примадонин</h4></a>
-                        <div class="contact-status mb-0 text-muted">Онлайн</div>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
+                  <h2 class="h1 fw-bold mt-5 mb-4">Контакты</h2>
+                  <form class="border-gray border-bottom">
+                    <label class="d-none" for="searchContact"></label>
+                    <input class="py-2 border-0 form-control" type="text" id="searchContact" placeholder="Поиск по контактам">
+                  </form>
+                  <div class="mb-5">
+                    <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">A</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-auto"><img class="avatar" src="/images/avatar_3.jpg"></div>
+                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Алексей Примадонин</h4></a>
+                            <div class="contact-status mb-0 text-muted">Онлайн</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">В</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-auto"><img class="avatar" src="/images/avatar_4.jpg"></div>
+                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4></a>
+                            <div class="contact-status mb-0 text-muted">Онлайн</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">Д</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-auto"><img class="avatar" src="/images/avatar_2.jpg"></div>
+                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Джедай Падаванов</h4></a>
+                            <div class="contact-status mb-0 text-muted">Был онлайн вчера</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">К</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-auto"><img class="avatar" src="/images/avatar_1.jpg"></div>
+                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Кодовёнок Хекслетович</h4></a>
+                            <div class="contact-status mb-0 text-muted">Был онлайн 3 часа назад</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-auto"><img class="avatar" src="/images/avatar_5.jpg"></div>
+                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Королева Верстальщина</h4></a>
+                            <div class="contact-status mb-0 text-muted">Была онлайн вчера</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">П</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-auto"><img class="avatar" src="/images/avatar_6.jpg"></div>
+                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Питонист Джангович</h4></a>
+                            <div class="contact-status mb-0 text-muted">Был онлайн вчера</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">В</h2>
-                <div class="list-group list-group-flush">
-                  <div class="list-group-item shadow-sm mb-3 contact-card">
-                    <div class="align-items-center row">
-                      <div class="col-auto"><img class="avatar" src="/images/avatar_4.jpg"></div>
-                      <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
-                          <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4></a>
-                        <div class="contact-status mb-0 text-muted">Онлайн</div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+                  <h2 class="h1 fw-bold mt-5">Сообщения</h2>
                 </div>
-                <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">Д</h2>
-                <div class="list-group list-group-flush">
-                  <div class="list-group-item shadow-sm mb-3 contact-card">
-                    <div class="align-items-center row">
-                      <div class="col-auto"><img class="avatar" src="/images/avatar_2.jpg"></div>
-                      <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
-                          <h4 class="mb-1 fs-6 fw-bold">Джедай Падаванов</h4></a>
-                        <div class="contact-status mb-0 text-muted">Был онлайн вчера</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">К</h2>
-                <div class="list-group list-group-flush">
-                  <div class="list-group-item shadow-sm mb-3 contact-card">
-                    <div class="align-items-center row">
-                      <div class="col-auto"><img class="avatar" src="/images/avatar_1.jpg"></div>
-                      <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
-                          <h4 class="mb-1 fs-6 fw-bold">Кодовёнок Хекслетович</h4></a>
-                        <div class="contact-status mb-0 text-muted">Был онлайн 3 часа назад</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="list-group list-group-flush">
-                  <div class="list-group-item shadow-sm mb-3 contact-card">
-                    <div class="align-items-center row">
-                      <div class="col-auto"><img class="avatar" src="/images/avatar_5.jpg"></div>
-                      <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
-                          <h4 class="mb-1 fs-6 fw-bold">Королева Верстальщина</h4></a>
-                        <div class="contact-status mb-0 text-muted">Была онлайн вчера</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">П</h2>
-                <div class="list-group list-group-flush">
-                  <div class="list-group-item shadow-sm mb-3 contact-card">
-                    <div class="align-items-center row">
-                      <div class="col-auto"><img class="avatar" src="/images/avatar_6.jpg"></div>
-                      <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
-                          <h4 class="mb-1 fs-6 fw-bold">Питонист Джангович</h4></a>
-                        <div class="contact-status mb-0 text-muted">Был онлайн вчера</div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <h2 class="h1 fw-bold mt-5">Профиль</h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="d-none d-md-block col-md-8 container-xxl">
-          <p>Правая часть</p>
+        <div class="d-none d-md-block col-md-7 container-xxl">
+          <div class="d-flex flex-column align-items-center justify-content-center h-100"><img class="hello-image mb-3" src="images/avatar_1.jpg">
+            <div class="fw-bold">Привет, Кодовёнок</div>
+            <div class="text-muted small">Выбери чат, чтобы начать общаться</div>
+          </div>
         </div>
       </div>
     </div>

@@ -30,10 +30,9 @@ function browsersync() {
 
 function scripts() {
     return src([ // Берем файлы из источников
-        'node_modules/bootstrap/js/dist/base-component.js', // Пример подключения библиотеки
-        'node_modules/bootstrap/js/dist/button.js',
+        'node_modules/bootstrap/dist/js/bootstrap.js',
+        // Здесь остальные скрипты
     ])
-        .pipe(concat('app.min.js')) // Конкатенируем в один файл
         .pipe(dest('build/js/')) // Выгружаем готовый файл в папку назначения
         .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
@@ -124,4 +123,4 @@ exports.svg2sprite = svg2sprite;
 exports.cleanbuild = cleanbuild;
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = series(parallel(cleanbuild, sass2css, pug2html, images, scripts), parallel(browsersync, startwatch));
+exports.default = series(parallel(cleanbuild, svg2sprite, sass2css, pug2html, images, scripts), parallel(browsersync, startwatch));

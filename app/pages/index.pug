@@ -6,12 +6,19 @@ html(lang='ru')
   body.py-md-5.bg-gray.vh-100
     .container.bg-white.mb-5.h-100.overflow-hidden.rounded-md
       .row.h-100
-        .col-12.col-md-4.h-100.border-gray.d-flex.flex-column-reverse.flex-md-column.border-end-md
+        .col-12.col-md-5.h-100.border-gray.d-flex.flex-column-reverse.flex-md-column.border-end-md
           .row
             .col.bg-primary.text-white
               include blocks/header
           .row.pt-5.h-100
             .col.px-4.h-100.overflow-scroll.hide-scrollbar
-              include blocks/contacts
-        .d-none.d-md-block.col-md-8.container-xxl
-          p Правая часть
+              #pills-tabContent.tab-content
+                #pills-contacts.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-contacts-tab')
+                  include blocks/contacts
+                #pills-messages.tab-pane.fade(role='tabpanel' aria-labelledby='pills-messages-tab')
+                  h2.h1.fw-bold.mt-5 Сообщения
+                #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab')
+                  h2.h1.fw-bold.mt-5 Профиль
+        .d-none.d-md-block.col-md-7.container-xxl
+          include blocks/right-side
+

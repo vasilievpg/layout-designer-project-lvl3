@@ -4,7 +4,7 @@
   background-color: map-get($theme-colors, 'primary');
 }
 
-.contact-card * :hover {
+.contact-card:hover * {
   color: map-get($theme-colors, 'light') !important;
 }
 
@@ -15,4 +15,8 @@
 
 .contact-status {
   font-size: 12.8px;
+}
+
+.icon-contacts {
+
 }

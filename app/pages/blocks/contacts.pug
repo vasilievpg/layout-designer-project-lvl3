@@ -36,7 +36,10 @@
     }],
   }
 
-h2.h1.fw-bold.mt-5 Контакты
+h2.h1.fw-bold.mt-5.mb-4 Контакты
+form.border-gray.border-bottom
+  label(for="searchContact").d-none
+  input.py-2.border-0(type="text" id="searchContact" class="form-control" placeholder="Поиск по контактам")
 .mb-5
   each users, char in contacts
     h2.text-muted.fs-6.fw-normal.mt-5.mb-4= char
