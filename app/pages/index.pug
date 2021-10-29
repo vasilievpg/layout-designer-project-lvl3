@@ -2,6 +2,7 @@ doctype html
 html(lang='ru')
   head
     include blocks/meta
+    link(rel="stylesheet", href="/build/styles/app.css", attr)
     title Started Page
   body.py-md-5.bg-gray.vh-100
     .container.bg-white.mb-5.h-100.overflow-hidden.rounded-md
@@ -11,14 +12,13 @@ html(lang='ru')
             .col.bg-primary.text-white
               include blocks/header
           .row.pt-5.h-100
-            .col.px-4.h-100.overflow-scroll.hide-scrollbar
-              #pills-tabContent.tab-content
-                #pills-contacts.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-contacts-tab')
+            .col.px-4.h-100
+              #pills-tabContent.tab-content.h-100
+                #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar(role='tabpanel' aria-labelledby='pills-contacts-tab')
                   include blocks/contacts
-                #pills-messages.tab-pane.fade(role='tabpanel' aria-labelledby='pills-messages-tab')
-                  h2.h1.fw-bold.mt-5 Сообщения
+                #pills-messages.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar(role='tabpanel' aria-labelledby='pills-messages-tab')
+                  include blocks/messages
                 #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab')
                   h2.h1.fw-bold.mt-5 Профиль
         .d-none.d-md-block.col-md-7.container-xxl
           include blocks/right-side
-

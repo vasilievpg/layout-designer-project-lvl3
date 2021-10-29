@@ -4,6 +4,7 @@
 @import "right-side";
 @import "../scss/components/avatar";
 @import "../scss/components/contact";
+@import "../scss/components/messages";
 @import "node_modules/bootstrap/scss/bootstrap";
 
 .hide-scrollbar { @include hide-scrollbar; }

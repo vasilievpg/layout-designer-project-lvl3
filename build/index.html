@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/app.css" type="text/css">
     <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/build/styles/app.css" attr>
     <title>Started Page</title>
   </head>
   <body class="py-md-5 bg-gray vh-100">
@@ -53,9 +54,9 @@
             </div>
           </div>
           <div class="row pt-5 h-100">
-            <div class="col px-4 h-100 overflow-scroll hide-scrollbar">
-              <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
+            <div class="col px-4 h-100">
+              <div class="tab-content h-100" id="pills-tabContent">
+                <div class="tab-pane fade show active h-100 overflow-scroll hide-scrollbar" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
                   <h2 class="h1 fw-bold mt-5 mb-4">Контакты</h2>
                   <form class="border-gray border-bottom">
                     <label class="d-none" for="searchContact"></label>
@@ -66,8 +67,8 @@
                     <div class="list-group list-group-flush">
                       <div class="list-group-item shadow-sm mb-3 contact-card">
                         <div class="align-items-center row">
-                          <div class="col-auto"><img class="avatar" src="/images/avatar_3.jpg"></div>
-                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_3.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
                               <h4 class="mb-1 fs-6 fw-bold">Алексей Примадонин</h4></a>
                             <div class="contact-status mb-0 text-muted">Онлайн</div>
                           </div>
@@ -78,8 +79,8 @@
                     <div class="list-group list-group-flush">
                       <div class="list-group-item shadow-sm mb-3 contact-card">
                         <div class="align-items-center row">
-                          <div class="col-auto"><img class="avatar" src="/images/avatar_4.jpg"></div>
-                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_4.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
                               <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4></a>
                             <div class="contact-status mb-0 text-muted">Онлайн</div>
                           </div>
@@ -90,8 +91,8 @@
                     <div class="list-group list-group-flush">
                       <div class="list-group-item shadow-sm mb-3 contact-card">
                         <div class="align-items-center row">
-                          <div class="col-auto"><img class="avatar" src="/images/avatar_2.jpg"></div>
-                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_2.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
                               <h4 class="mb-1 fs-6 fw-bold">Джедай Падаванов</h4></a>
                             <div class="contact-status mb-0 text-muted">Был онлайн вчера</div>
                           </div>
@@ -102,8 +103,8 @@
                     <div class="list-group list-group-flush">
                       <div class="list-group-item shadow-sm mb-3 contact-card">
                         <div class="align-items-center row">
-                          <div class="col-auto"><img class="avatar" src="/images/avatar_1.jpg"></div>
-                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_1.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
                               <h4 class="mb-1 fs-6 fw-bold">Кодовёнок Хекслетович</h4></a>
                             <div class="contact-status mb-0 text-muted">Был онлайн 3 часа назад</div>
                           </div>
@@ -113,8 +114,8 @@
                     <div class="list-group list-group-flush">
                       <div class="list-group-item shadow-sm mb-3 contact-card">
                         <div class="align-items-center row">
-                          <div class="col-auto"><img class="avatar" src="/images/avatar_5.jpg"></div>
-                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_5.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
                               <h4 class="mb-1 fs-6 fw-bold">Королева Верстальщина</h4></a>
                             <div class="contact-status mb-0 text-muted">Была онлайн вчера</div>
                           </div>
@@ -125,8 +126,8 @@
                     <div class="list-group list-group-flush">
                       <div class="list-group-item shadow-sm mb-3 contact-card">
                         <div class="align-items-center row">
-                          <div class="col-auto"><img class="avatar" src="/images/avatar_6.jpg"></div>
-                          <div class="col-auto p-3"><a class="stretched-link contact-name" href="#">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_6.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
                               <h4 class="mb-1 fs-6 fw-bold">Питонист Джангович</h4></a>
                             <div class="contact-status mb-0 text-muted">Был онлайн вчера</div>
                           </div>
@@ -135,8 +136,47 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-                  <h2 class="h1 fw-bold mt-5">Сообщения</h2>
+                <div class="tab-pane fade h-100 overflow-scroll hide-scrollbar" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+                  <h2 class="h1 fw-bold mt-5 mb-4">Сообщения</h2>
+                  <form class="border-gray border-bottom">
+                    <label class="d-none" for="searchContact"></label>
+                    <input class="py-2 border-0 form-control" type="text" id="searchContact" placeholder="Поиск по сообщениям">
+                  </form>
+                  <div class="mb-5">
+                    <div class="list-group list-group-flush mt-5">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_4.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4></a>
+                            <div class="contact-status mb-0 text-muted user-message">o_O</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group list-group-flush mt-5">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_2.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Джедай Падаванов</h4></a>
+                            <div class="contact-status mb-0 text-muted user-message">Привет, скоро третий проект? Уже скоро надо будет выложить</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group list-group-flush mt-5">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center row">
+                          <div class="col-2"><img class="avatar" src="/images/avatar_2.jpg"></div>
+                          <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Алексей Примадонин</h4></a>
+                            <div class="contact-status mb-0 text-muted user-message">Тесты упали &gt;_&lt;</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                   <h2 class="h1 fw-bold mt-5">Профиль</h2>

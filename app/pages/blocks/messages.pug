@@ -1,0 +1,39 @@
+-
+  var users = [
+    {
+      name: "Вениамин Редакторович",
+      time: "11:45",
+      message: "o_O",
+      avatar: "/images/avatar_4.jpg"
+    },
+    {
+      name: "Джедай Падаванов",
+      time: "10:12",
+      message: "Привет, скоро третий проект? Уже скоро надо будет выложить",
+      avatar: "/images/avatar_2.jpg"
+    },
+    {
+      name: "Алексей Примадонин",
+      time: "10:12",
+      message: "Тесты упали >_<",
+      avatar: "/images/avatar_2.jpg"
+    },
+  ]
+
+h2.h1.fw-bold.mt-5.mb-4 Сообщения
+form.border-gray.border-bottom
+  label(for="searchContact").d-none
+  input.py-2.border-0(type="text" id="searchContact" class="form-control" placeholder="Поиск по сообщениям")
+.mb-5
+  each user in users
+    .list-group.list-group-flush.mt-5
+      .list-group-item.shadow-sm.mb-3.contact-card
+        .align-items-center.row
+          .col-2
+            img(src=user.avatar).avatar
+          .col-10.p-3
+            a(href="#").stretched-link.contact-name
+              h4.mb-1.fs-6.fw-bold #{user.name}
+            .contact-status.mb-0.text-muted.user-message #{user.message}
+  else
+    li Нет пользователей
