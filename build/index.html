@@ -22,28 +22,25 @@
                           <use xlink:href="images/icons/sprite.svg#logo"></use>
                         </svg></a>
                       <ul class="nav nav-fill" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
+                        <li class="nav-item position-relative" role="presentation">
                           <div class="nav-link active text-white d-flex align-items-center" id="pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#pills-contacts" type="button" role="tab" aria-controls="pills-contacts" aria-selected="true">
                             <svg class="me-2" height="25" width="25">
                               <use xlink:href="images/icons/sprite.svg#people"></use>
-                            </svg>
-                            <div class="nav-link-text">Контакты</div>
+                            </svg><a class="nav-link-text stretched-link" href="#contacts"> <span class="d-none d-md-block">Контакты</span></a>
                           </div>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        <li class="nav-item position-relative" role="presentation">
                           <div class="nav-link text-white d-flex align-items-center" id="pills-messages-tab" data-bs-toggle="pill" data-bs-target="#pills-messages" type="button" role="tab" aria-controls="pills-messages" aria-selected="false">
                             <svg class="me-2" height="25" width="25">
                               <use xlink:href="images/icons/sprite.svg#chat"></use>
-                            </svg>
-                            <div class="nav-link-text">Сообщения</div>
+                            </svg><a class="nav-link-text stretched-link" href="#chats"> <span class="d-none d-md-block">Сообщения</span></a>
                           </div>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        <li class="nav-item position-relative" role="presentation">
                           <div class="nav-link text-white d-flex align-items-center" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                             <svg class="me-2" height="25" width="25">
                               <use xlink:href="images/icons/sprite.svg#person"></use>
-                            </svg>
-                            <div class="nav-link-text">Профиль</div>
+                            </svg><a class="nav-link-text stretched-link" href="#profile"> <span class="d-none d-md-block">Профиль</span></a>
                           </div>
                         </li>
                       </ul>
@@ -53,16 +50,16 @@
               </header>
             </div>
           </div>
-          <div class="row pt-5 h-100">
+          <div class="row h-100">
             <div class="col px-4 h-100">
               <div class="tab-content h-100" id="pills-tabContent">
                 <div class="tab-pane fade show active h-100 overflow-scroll hide-scrollbar" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
-                  <h2 class="h1 fw-bold mt-5 mb-4">Контакты</h2>
+                  <h2 class="h1 fw-bold mt-7 mt-md-5 mb-4">Контакты</h2>
                   <form class="border-gray border-bottom">
                     <label class="d-none" for="searchContact"></label>
                     <input class="py-2 border-0 form-control" type="text" id="searchContact" placeholder="Поиск по контактам">
                   </form>
-                  <div class="mb-5">
+                  <div class="mb-md-6">
                     <h2 class="text-muted fs-6 fw-normal mt-5 mb-4">A</h2>
                     <div class="list-group list-group-flush">
                       <div class="list-group-item shadow-sm mb-3 contact-card">
@@ -137,14 +134,14 @@
                   </div>
                 </div>
                 <div class="tab-pane fade h-100 overflow-scroll hide-scrollbar" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-                  <h2 class="h1 fw-bold mt-5 mb-4">Сообщения</h2>
-                  <form class="border-gray border-bottom">
+                  <h2 class="h1 fw-bold mt-7 mt-md-5 mb-4">Чаты</h2>
+                  <form class="border-gray border-bottom mb-5">
                     <label class="d-none" for="searchContact"></label>
                     <input class="py-2 border-0 form-control" type="text" id="searchContact" placeholder="Поиск по сообщениям">
                   </form>
-                  <div class="mb-5">
-                    <div class="list-group list-group-flush mt-5">
-                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                  <div class="mb-md-6">
+                    <div class="list-group list-group-flush mt-3">
+                      <div class="list-group-item shadow-sm contact-card">
                         <div class="align-items-center row">
                           <div class="col-2"><img class="avatar" src="/images/avatar_4.jpg"></div>
                           <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
@@ -154,8 +151,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="list-group list-group-flush mt-5">
-                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                    <div class="list-group list-group-flush mt-3">
+                      <div class="list-group-item shadow-sm contact-card">
                         <div class="align-items-center row">
                           <div class="col-2"><img class="avatar" src="/images/avatar_2.jpg"></div>
                           <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">
@@ -165,8 +162,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="list-group list-group-flush mt-5">
-                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                    <div class="list-group list-group-flush mt-3">
+                      <div class="list-group-item shadow-sm contact-card">
                         <div class="align-items-center row">
                           <div class="col-2"><img class="avatar" src="/images/avatar_2.jpg"></div>
                           <div class="col-10 p-3"><a class="stretched-link contact-name" href="#">

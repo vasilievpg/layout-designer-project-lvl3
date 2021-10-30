@@ -20,14 +20,14 @@
     },
   ]
 
-h2.h1.fw-bold.mt-5.mb-4 Сообщения
-form.border-gray.border-bottom
+h2.h1.fw-bold.mt-7.mt-md-5.mb-4 Чаты
+form.border-gray.border-bottom.mb-5
   label(for="searchContact").d-none
   input.py-2.border-0(type="text" id="searchContact" class="form-control" placeholder="Поиск по сообщениям")
-.mb-5
+.mb-md-6
   each user in users
-    .list-group.list-group-flush.mt-5
-      .list-group-item.shadow-sm.mb-3.contact-card
+    .list-group.list-group-flush.mt-3
+      .list-group-item.shadow-sm.contact-card
         .align-items-center.row
           .col-2
             img(src=user.avatar).avatar
