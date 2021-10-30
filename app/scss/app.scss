@@ -4,10 +4,14 @@
 @import "right-side";
 @import "../scss/components/avatar";
 @import "../scss/components/contact";
-@import "../scss/components/messages";
+@import "../scss/components/chats";
 @import "node_modules/bootstrap/scss/bootstrap";
 
 .hide-scrollbar { @include hide-scrollbar; }
+
+.small {
+  font-size: 12.8px;
+}
 
 @media (min-width: 767.98px) {
   .rounded-md {

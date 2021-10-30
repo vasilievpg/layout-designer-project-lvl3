@@ -6,7 +6,6 @@
 .nav-link-text,
 .nav-link-text:hover {
   color: inherit;
-  font-size: 12.8px;
   text-decoration: inherit;
 }
 
@@ -34,19 +33,11 @@
   text-decoration: inherit;
 }
 
-.contact-status {
-  font-size: 12.8px;
-}
-
 .user-message {
   max-width: 320px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.time {
-  font-size: 12.8px;
 }
 
 /*!
@@ -12165,6 +12156,10 @@ textarea.form-control-lg {
 }
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.small {
+  font-size: 12.8px;
 }
 
 @media (min-width: 767.98px) {
