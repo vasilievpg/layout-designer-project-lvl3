@@ -10,7 +10,9 @@
   text-decoration: inherit;
 }
 
-.hide-scrollbar { @include hide-scrollbar; }
+.hide-scrollbar {
+  @include hide-scrollbar;
+}
 
 .small {
   font-size: 12.8px;
@@ -26,4 +28,10 @@
   .border-end-md {
     border-right: 1px solid #dee2e6 !important;
   }
+}
+
+.left-side {
+  flex-flow: column;
+  height: 100%;
+  max-height: 100vh;
 }

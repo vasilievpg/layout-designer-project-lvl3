@@ -7,14 +7,14 @@ html(lang='ru')
   body.py-md-5.bg-gray.vh-100
     .container.bg-white.mb-5.h-100.overflow-hidden.rounded-md
       .row.h-100
-        .col-12.col-md-5.h-100.border-gray.d-flex.flex-column-reverse.flex-md-column.border-end-md
+        .col-md-5.h-100.border-gray.d-flex.flex-column-reverse.flex-md-column.border-end-md
           .row
             .col.bg-primary.text-white
               include blocks/header
           .row.h-100
             .col.px-4.h-100
               #pills-tabContent.tab-content.h-100
-                #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar(role='tabpanel' aria-labelledby='pills-contacts-tab')
+                #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar.mh-100(role='tabpanel' aria-labelledby='pills-contacts-tab')
                   include blocks/contacts
                 #pills-messages.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar(role='tabpanel' aria-labelledby='pills-messages-tab')
                   include blocks/chats

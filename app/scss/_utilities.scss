@@ -1,0 +1,12 @@
+$utilities: () !default;
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "z-index": (
+      property: z-index,
+      class: zi,
+      values: $z-indexes
+    ),
+  )
+);
