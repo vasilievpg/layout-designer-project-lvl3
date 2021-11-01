@@ -2,7 +2,7 @@ doctype html
 html(lang='ru')
   head
     include blocks/meta
-    link(rel="stylesheet", href="/build/styles/app.css", attr)
+    link(rel="stylesheet", href="/build/styles/app.css")
     title Started Page
   body.py-md-5.bg-gray.vh-100
     .container.bg-white.h-100.overflow-hidden.rounded-md
@@ -37,12 +37,14 @@ html(lang='ru')
           .row.h-100
             .col.px-4.h-100
               #pills-tabContent.tab-content.h-100
-                #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar.mh-100.position-relative(role='tabpanel' aria-labelledby='pills-contacts-tab')
-                  .position-absolute.w-100
+                #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar.position-relative(role='tabpanel' aria-labelledby='pills-contacts-tab')
+                  .position-absolute.w-100.top-0.pt-7
                     include blocks/contacts
-                #pills-messages.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar(role='tabpanel' aria-labelledby='pills-messages-tab')
-                  include blocks/chats
-                #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab')
-                  h2.h1.fw-bold.mt-5 Профиль
+                #pills-messages.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar.position-relative(role='tabpanel' aria-labelledby='pills-messages-tab')
+                  .position-absolute.w-100.top-0.pt-7
+                    include blocks/chats
+                #pills-profile.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar.position-relative(role='tabpanel' aria-labelledby='pills-profile-tab')
+                  .position-absolute.w-100.top-0.pt-7
+                    h2.h1.fw-bold.mb-4 Профиль
         .d-none.d-md-block.col-md-8.container-xxl.h-100
           include blocks/right-side
