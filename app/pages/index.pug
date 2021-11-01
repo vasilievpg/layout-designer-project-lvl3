@@ -5,20 +5,44 @@ html(lang='ru')
     link(rel="stylesheet", href="/build/styles/app.css", attr)
     title Started Page
   body.py-md-5.bg-gray.vh-100
-    .container.bg-white.mb-5.h-100.overflow-hidden.rounded-md
+    .container.bg-white.h-100.overflow-hidden.rounded-md
       .row.h-100
-        .col-md-5.h-100.border-gray.d-flex.flex-column-reverse.flex-md-column.border-end-md
-          .row
-            .col.bg-primary.text-white
-              include blocks/header
+        .col-md-4.h-100.border-gray.d-flex.flex-column-reverse.flex-md-column.border-end-md
+          header
+            .row
+              .col.bg-primary.text-white
+                .navbar.py-3.ps-2
+                  a.navbar-brand(href="#")
+                    svg(height='25' width='15')
+                      use(xlink:href='images/icons/sprite.svg#logo')
+                  ul#pills-tab.nav.nav-fill(role='tablist')
+                    li.nav-item.position-relative(role='presentation')
+                      #pills-contacts-tab.nav-link.active.text-white.d-flex.align-items-center(data-bs-toggle='pill' data-bs-target='#pills-contacts' type='button' role='tab' aria-controls='pills-contacts' aria-selected='true')
+                        svg(height='25' width='25').me-2
+                          use(xlink:href='images/icons/sprite.svg#people')
+                        a.nav-link-text.small.stretched-link(href="#contacts")
+                          span.d-none.d-md-block Контакты
+                    li.nav-item.position-relative(role='presentation')
+                      #pills-messages-tab.nav-link.text-white.d-flex.align-items-center(data-bs-toggle='pill' data-bs-target='#pills-messages' type='button' role='tab' aria-controls='pills-messages' aria-selected='false')
+                        svg(height='25' width='25').me-2
+                          use(xlink:href='images/icons/sprite.svg#chat')
+                        a.nav-link-text.small.stretched-link(href="#chats")
+                          span.d-none.d-md-block Сообщения
+                    li.nav-item.position-relative(role='presentation')
+                      #pills-profile-tab.nav-link.text-white.d-flex.align-items-center(data-bs-toggle='pill' data-bs-target='#pills-profile' type='button' role='tab' aria-controls='pills-profile' aria-selected='false')
+                        svg(height='25' width='25').me-2
+                          use(xlink:href='images/icons/sprite.svg#person')
+                        a.nav-link-text.small.stretched-link(href="#profile")
+                          span.d-none.d-md-block Профиль
           .row.h-100
             .col.px-4.h-100
               #pills-tabContent.tab-content.h-100
-                #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar.mh-100(role='tabpanel' aria-labelledby='pills-contacts-tab')
-                  include blocks/contacts
+                #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar.mh-100.position-relative(role='tabpanel' aria-labelledby='pills-contacts-tab')
+                  .position-absolute.w-100
+                    include blocks/contacts
                 #pills-messages.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar(role='tabpanel' aria-labelledby='pills-messages-tab')
                   include blocks/chats
                 #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab')
                   h2.h1.fw-bold.mt-5 Профиль
-        .d-none.d-md-block.col-md-7.container-xxl.h-100
+        .d-none.d-md-block.col-md-8.container-xxl.h-100
           include blocks/right-side
