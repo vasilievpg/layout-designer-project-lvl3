@@ -3,6 +3,54 @@ $utilities: () !default;
 $utilities: map-merge(
   $utilities,
   (
+    "radius-left-top": (
+      property: border-top-left-radius,
+      class: radius-left-top,
+      responsive: true,
+      values: (null: 1rem)
+    ),
+    "radius-left": (
+      property: border-top-left-radius border-bottom-left-radius,
+      class: radius-left,
+      responsive: true,
+      values: (null: 1rem)
+    ),
+    "radius-right": (
+      property: border-top-right-radius border-bottom-right-radius,
+      class: radius-right,
+      responsive: true,
+      values: (null: 1rem)
+    ),
+    "radius": (
+      property: border-radius,
+      class: radius,
+      responsive: true,
+      values: (null: 1rem)
+    ),
+    "border-top": (
+      property: border-top,
+      class: border-top,
+      responsive: true,
+      values: (null: 1px solid #efefef)
+    ),
+    "border-right": (
+      property: border-right,
+      class: border-right,
+      responsive: true,
+      values: (null: 1px solid #efefef)
+    ),
+    "border-bottom": (
+      property: border-bottom,
+      class: border-bottom,
+      responsive: true,
+      values: (null: 1px solid #efefef)
+    ),
+    "border-left": (
+      property: border-left,
+      class: border-left,
+      responsive: true,
+      values: (null: 1px solid #efefef)
+    ),
     "z-index": (
       property: z-index,
       class: zi,
