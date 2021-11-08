@@ -51,6 +51,12 @@ $utilities: map-merge(
       responsive: true,
       values: (null: 1px solid #efefef)
     ),
+    "border-all": (
+      property: border,
+      class: border-all,
+      responsive: true,
+      values: (null: 1px solid #efefef)
+    ),
     "z-index": (
       property: z-index,
       class: zi,

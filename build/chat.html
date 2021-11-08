@@ -6,21 +6,337 @@
     <link rel="stylesheet" href="styles/app.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" type="text/css">
     <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/build/styles/app.css">
     <title>Чаты</title>
   </head>
-  <body class="pt-5 pb-5 bg-gray vh-100 overflow-hidden">
-    <div class="container bg-white rounded overflow-hidden mb-5 h-100">
+  <body class="py-md-5 bg-gray vh-100">
+    <div class="container bg-white h-100 overflow-hidden radius-md">
       <div class="row h-100">
-        <div class="col-12 col-md-4 h-100 border-end border-gray">
-          <div class="row">
-            <div class="col bg-primary text-white"></div>
-          </div>
-          <div class="row pt-5">
-            <div class="col px-4"></div>
+        <div class="col-md-4 h-100 d-flex flex-column-reverse flex-md-column border-right-md">
+          <header>
+            <div class="row">
+              <div class="col bg-primary text-white">
+                <div class="navbar py-3 ps-2"><a class="navbar-brand" href="#">
+                    <svg height="25" width="15">
+                      <use xlink:href="images/icons/sprite.svg#logo"></use>
+                    </svg></a>
+                  <ul class="nav nav-fill" id="pills-tab" role="tablist">
+                    <li class="nav-item position-relative d-block d-md-none" role="presentation">
+                      <div class="nav-link text-white d-flex align-items-center" id="current-chat-tab" data-bs-toggle="pill" data-bs-target="#pills-current-chat" type="button" role="tab" aria-controls="pills-current-chat" aria-selected="false">
+                        <svg class="me-2" height="25" width="25">
+                          <use xlink:href="images/icons/sprite.svg#chat-left-text"></use>
+                        </svg><a class="nav-link-text small stretched-link" href="#current-chat"></a>
+                      </div>
+                    </li>
+                    <li class="nav-item position-relative" role="presentation">
+                      <div class="nav-link text-white d-flex align-items-center" id="pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#pills-contacts" type="button" role="tab" aria-controls="pills-contacts" aria-selected="false">
+                        <svg class="me-2" height="25" width="25">
+                          <use xlink:href="images/icons/sprite.svg#people"></use>
+                        </svg><a class="nav-link-text small stretched-link" href="#contacts"><span class="d-none d-md-block">Контакты</span></a>
+                      </div>
+                    </li>
+                    <li class="nav-item position-relative" role="presentation">
+                      <div class="nav-link active text-white d-flex align-items-center" id="pills-messages-tab" data-bs-toggle="pill" data-bs-target="#pills-messages" type="button" role="tab" aria-controls="pills-messages" aria-selected="true">
+                        <svg class="me-2" height="25" width="25">
+                          <use xlink:href="images/icons/sprite.svg#chat"></use>
+                        </svg><a class="nav-link-text small stretched-link" href="#chats"><span class="d-none d-md-block">Сообщения</span></a>
+                      </div>
+                    </li>
+                    <li class="nav-item position-relative" role="presentation">
+                      <div class="nav-link text-white d-flex align-items-center" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <svg class="me-2" height="25" width="25">
+                          <use xlink:href="images/icons/sprite.svg#person"></use>
+                        </svg><a class="nav-link-text small stretched-link" href="#profile"><span class="d-none d-md-block">Профиль</span></a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div class="row h-100">
+            <div class="col h-100 p-0">
+              <div class="tab-content h-100" id="pills-tabContent">
+                <div class="tab-pane fade h-100 overflow-scroll hide-scrollbar position-relative" id="pills-current-chat" role="tabpanel" aria-labelledby="pills-current-chat">
+                  <div class="position-absolute w-100 top-0">
+                    <div class="d-block d-md-none">
+                      <div class="align-items-center d-flex border-bottom sticky-top ps-3 bg-white"><img class="avatar" src="/images/avatar_4.jpg">
+                        <div class="p-4">
+                          <div class="contact-name">
+                            <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4>
+                          </div>
+                          <div class="small mb-0 text-muted">Онлайн</div>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-end dialog-message ms-md-7 mb-3 mt-7"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_4.jpg">
+                        <div class="radius shadow-sm p-4 mx-7 mx-md-0">
+                          <div class="mb-1 fw-bold text-dark">Вениамин Редакторович</div>
+                          <div class="text-muted mb-2">Да, я уже вышел и минут через 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?</div>
+                          <div class="small text-muted">8 минут назад</div>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-end me-md-7 mb-3">
+                        <div class="d-flex align-items-end dialog-message ms-md-7"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_1.jpg">
+                          <div class="radius shadow-sm p-4 mx-7 mx-md-0 bg-primary">
+                            <div class="mb-2 text-light border-bottom pb-2">Захвати мне колы и пару печенек. Как-то очень сладкого хочется, а в магазин идти лень</div>
+                            <div class="small text-light">5 минут назад</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-end dialog-message ms-md-7 mb-3"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_4.jpg">
+                        <div class="radius shadow-sm p-4 mx-7 mx-md-0">
+                          <div class="mb-1 fw-bold text-dark">Вениамин Редакторович</div>
+                          <div class="text-muted mb-2">Лады</div>
+                          <div class="small text-muted">5 минут назад</div>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-end me-md-7 mb-3">
+                        <div class="d-flex align-items-end dialog-message ms-md-7"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_1.jpg">
+                          <div class="radius shadow-sm p-4 mx-7 mx-md-0 bg-primary">
+                            <div class="mb-2 text-light border-bottom pb-2">А, слушай, купи мне ещё Macbook Pro. А то хочется работать в Хекслете, а там это условие</div>
+                            <div class="small text-light">3 минуты назад</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-end dialog-message ms-md-7 mb-3"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_4.jpg">
+                        <div class="radius shadow-sm p-4 mx-7 mx-md-0">
+                          <div class="mb-1 fw-bold text-dark">Вениамин Редакторович</div>
+                          <div class="text-muted mb-2">о_О</div>
+                          <div class="small text-muted">Только что</div>
+                        </div>
+                      </div>
+                      <div class="position-sticky bottom-0 px-md-7 bg-white">
+                        <form class="d-flex border-top-md p-0">
+                          <label class="d-none" for="searchContact"></label>
+                          <input class="border-0 form-control" type="text" id="searchContact" placeholder="Напишите сообщение">
+                          <button class="btn bg-primary dialog-btn mt-3 me-3 mb-3" type="submit"><i class="text-white bi-cursor"></i></button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade h-100 overflow-scroll hide-scrollbar position-relative" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
+                  <div class="position-absolute w-100 top-0 pt-7 px-4">
+                    <h2 class="h1 fw-bold mb-4">Контакты</h2>
+                    <form class="border-bottom mb-7">
+                      <label class="d-none" for="searchContact"></label>
+                      <input class="p-4 border-0 form-control" type="text" id="searchContact" placeholder="Поиск по контактам">
+                    </form>
+                    <h2 class="text-muted fs-6 fw-normal mb-4">A</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center d-flex"><img class="avatar" src="/images/avatar_3.jpg">
+                          <div class="p-4"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Алексей Примадонин</h4></a>
+                            <div class="small mb-0 text-muted">Онлайн</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mb-4">В</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center d-flex"><img class="avatar" src="/images/avatar_4.jpg">
+                          <div class="p-4"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4></a>
+                            <div class="small mb-0 text-muted">Онлайн</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mb-4">Д</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center d-flex"><img class="avatar" src="/images/avatar_2.jpg">
+                          <div class="p-4"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Джедай Падаванов</h4></a>
+                            <div class="small mb-0 text-muted">Был онлайн вчера</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mb-4">К</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center d-flex"><img class="avatar" src="/images/avatar_1.jpg">
+                          <div class="p-4"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Кодовёнок Хекслетович</h4></a>
+                            <div class="small mb-0 text-muted">Был онлайн 3 часа назад</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center d-flex"><img class="avatar" src="/images/avatar_5.jpg">
+                          <div class="p-4"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Королева Верстальщина</h4></a>
+                            <div class="small mb-0 text-muted">Была онлайн вчера</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h2 class="text-muted fs-6 fw-normal mb-4">П</h2>
+                    <div class="list-group list-group-flush">
+                      <div class="list-group-item shadow-sm mb-3 contact-card">
+                        <div class="align-items-center d-flex"><img class="avatar" src="/images/avatar_6.jpg">
+                          <div class="p-4"><a class="stretched-link contact-name" href="#">
+                              <h4 class="mb-1 fs-6 fw-bold">Питонист Джангович</h4></a>
+                            <div class="small mb-0 text-muted">Был онлайн вчера</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade show active h-100 overflow-scroll hide-scrollbar position-relative" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+                  <div class="position-absolute w-100 top-0 pt-7 px-4">
+                    <h2 class="h1 fw-bold mb-4">Чаты</h2>
+                    <form class="border-bottom mb-7">
+                      <label class="d-none" for="searchContact"></label>
+                      <input class="p-4 border-0 form-control" type="text" id="searchContact" placeholder="Поиск по сообщениям">
+                    </form>
+                    <div class="list-group list-group-flush mb-3">
+                      <div class="list-group-item shadow-sm contact-card">
+                        <div class="align-items-center d-flex w-100"><img class="avatar" src="/images/avatar_4.jpg">
+                          <div class="p-4 w-100">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap"><a class="stretched-link contact-name" href="#">
+                                <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4></a><span class="time text-muted small">11:45</span></div>
+                            <div class="d-flex flex-nowrap w-100">
+                              <div class="small mb-0 text-muted user-message">o_O</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group list-group-flush mb-3">
+                      <div class="list-group-item shadow-sm contact-card">
+                        <div class="align-items-center d-flex w-100"><img class="avatar" src="/images/avatar_2.jpg">
+                          <div class="p-4 w-100">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap"><a class="stretched-link contact-name" href="#">
+                                <h4 class="mb-1 fs-6 fw-bold">Джедай Падаванов</h4></a><span class="time text-muted small">10:12</span></div>
+                            <div class="d-flex flex-nowrap w-100">
+                              <div class="small mb-0 text-muted user-message">Привет, скоро третий проект? Уже скоро надо будет выложить</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group list-group-flush mb-3">
+                      <div class="list-group-item shadow-sm contact-card">
+                        <div class="align-items-center d-flex w-100"><img class="avatar" src="/images/avatar_3.jpg">
+                          <div class="p-4 w-100">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap"><a class="stretched-link contact-name" href="#">
+                                <h4 class="mb-1 fs-6 fw-bold">Алексей Примадонин</h4></a><span class="time text-muted small">08:53</span></div>
+                            <div class="d-flex flex-nowrap w-100">
+                              <div class="small mb-0 text-muted user-message">Тесты упали &gt;_&lt;</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade h-100 overflow-scroll hide-scrollbar position-relative" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="position-absolute w-100 top-0 pt-7 px-4">
+                    <h2 class="h1 fw-bold mb-4">Профиль</h2>
+                    <form class="border-gray border-bottom mb-7">
+                      <label class="d-none" for="searchContact"></label>
+                      <input class="p-4 border-0 form-control" type="text" id="searchContact" placeholder="Поиск по сообщениям">
+                    </form>
+                    <div class="card py-3 mb-3 border-0">
+                      <div class="card-body text-center"><img class="mb-3 rounded-circle img-profile" src="images/avatar_1.jpg">
+                        <div class="h5">Кодовёнок Хекслетович</div>
+                        <p class="text-muted">Милый и скромный помощник начинающих разработчиков. Люблю JavaScript</p>
+                      </div>
+                    </div>
+                    <div class="card border-0 py-3">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <div class="text-muted small">Страна</div>
+                            <div class="small">Москва, Россия</div>
+                          </div><i class="bi text-black-50 bi-globe"></i>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <div class="text-muted small">Телефон</div>
+                            <div class="small">+7 (499) 123-45-67</div>
+                          </div><i class="bi text-black-50 bi-telephone"></i>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <div class="text-muted small">Email</div>
+                            <div class="small">nikita.m@hexlet.io</div>
+                          </div><i class="bi text-black-50 bi-envelope"></i>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <div>
+                            <div class="text-muted small">Twitter</div>
+                            <div class="small">@n__mikhaylov</div>
+                          </div><i class="bi text-black-50 bi-people"></i>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="d-none d-md-block col-md-8 container-xxl">
-          <p>Правая часть</p>
+        <div class="d-none d-md-block col-md-8 container-xxl h-100 p-0 overflow-scroll hide-scrollbar">
+          <div class="align-items-center d-flex border-bottom sticky-top ps-3 bg-white"><img class="avatar" src="/images/avatar_4.jpg">
+            <div class="p-4">
+              <div class="contact-name">
+                <h4 class="mb-1 fs-6 fw-bold">Вениамин Редакторович</h4>
+              </div>
+              <div class="small mb-0 text-muted">Онлайн</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-end dialog-message ms-md-7 mb-3 mt-7"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_4.jpg">
+            <div class="radius shadow-sm p-4 mx-7 mx-md-0">
+              <div class="mb-1 fw-bold text-dark">Вениамин Редакторович</div>
+              <div class="text-muted mb-2">Да, я уже вышел и минут через 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?</div>
+              <div class="small text-muted">8 минут назад</div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end me-md-7 mb-3">
+            <div class="d-flex align-items-end dialog-message ms-md-7"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_1.jpg">
+              <div class="radius shadow-sm p-4 mx-7 mx-md-0 bg-primary">
+                <div class="mb-2 text-light border-bottom pb-2">Захвати мне колы и пару печенек. Как-то очень сладкого хочется, а в магазин идти лень</div>
+                <div class="small text-light">5 минут назад</div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-end dialog-message ms-md-7 mb-3"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_4.jpg">
+            <div class="radius shadow-sm p-4 mx-7 mx-md-0">
+              <div class="mb-1 fw-bold text-dark">Вениамин Редакторович</div>
+              <div class="text-muted mb-2">Лады</div>
+              <div class="small text-muted">5 минут назад</div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end me-md-7 mb-3">
+            <div class="d-flex align-items-end dialog-message ms-md-7"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_1.jpg">
+              <div class="radius shadow-sm p-4 mx-7 mx-md-0 bg-primary">
+                <div class="mb-2 text-light border-bottom pb-2">А, слушай, купи мне ещё Macbook Pro. А то хочется работать в Хекслете, а там это условие</div>
+                <div class="small text-light">3 минуты назад</div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-end dialog-message ms-md-7 mb-3"><img class="avatar me-md-3 d-none d-md-block" src="/images/avatar_4.jpg">
+            <div class="radius shadow-sm p-4 mx-7 mx-md-0">
+              <div class="mb-1 fw-bold text-dark">Вениамин Редакторович</div>
+              <div class="text-muted mb-2">о_О</div>
+              <div class="small text-muted">Только что</div>
+            </div>
+          </div>
+          <div class="position-sticky bottom-0 px-md-7 bg-white">
+            <form class="d-flex border-top-md p-0">
+              <label class="d-none" for="searchContact"></label>
+              <input class="border-0 form-control" type="text" id="searchContact" placeholder="Напишите сообщение">
+              <button class="btn bg-primary dialog-btn mt-3 me-3 mb-3" type="submit"><i class="text-white bi-cursor"></i></button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

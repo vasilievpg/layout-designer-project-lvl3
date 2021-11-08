@@ -37,18 +37,17 @@
   }
 
 h2.h1.fw-bold.mb-4 Контакты
-form.border-gray.border-bottom.mb-7
+form.border-bottom.mb-7
   label(for="searchContact").d-none
   input.p-4.border-0(type="text" id="searchContact" class="form-control" placeholder="Поиск по контактам")
 each users, char in contacts
-  h2.text-muted.fs-6.fw-normal.mt-7.mb-4= char
+  h2.text-muted.fs-6.fw-normal.mb-4= char
   each user in users
     .list-group.list-group-flush
       .list-group-item.shadow-sm.mb-3.contact-card
-        .align-items-center.row
-          .col-2
-            img(src=user.avatar).avatar
-          .col-10.p-4
+        .align-items-center.d-flex
+          img(src=user.avatar).avatar
+          .p-4
             a(href="#").stretched-link.contact-name
               h4.mb-1.fs-6.fw-bold #{user.name}
             .small.mb-0.text-muted #{user.status}
