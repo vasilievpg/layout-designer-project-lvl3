@@ -33,8 +33,9 @@ html(lang='ru')
                       #pills-profile-tab.nav-link.text-white.d-flex.align-items-center(data-bs-toggle='pill' data-bs-target='#pills-profile' type='button' role='tab' aria-controls='pills-profile' aria-selected='false')
                         svg(height='25' width='25').me-2
                           use(xlink:href='images/icons/sprite.svg#person')
-                        a.nav-link-text.small.stretched-link(href="#profile")
-                          span.d-none.d-md-block Профиль
+                        nav
+                          a.nav-link-text.small.stretched-link(href="#profile")
+                            span.d-none.d-md-block Профиль
           .row.h-100
             .col.px-4.h-100
               #pills-tabContent.tab-content.h-100
