@@ -13752,11 +13752,17 @@ textarea.form-control-lg {
 }
 
 .dialog-btn {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
 }
 
+@media (min-width: 767.98px) {
+  .dialog-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
 .bi-cursor::before {
   font-size: 1.5rem;
 }
