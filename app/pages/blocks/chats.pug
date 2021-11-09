@@ -20,16 +20,16 @@
     },
   ]
 
-h2.h1.fw-bold.mb-4 Чаты
-form.border-bottom.mb-7
+h2.fw-bold.mb-4 Чаты
+form.mb-6
   label(for="searchContact").d-none
-  input.p-4.border-0(type="text" id="searchContact" class="form-control" placeholder="Поиск по сообщениям")
+  input.p-3.border-0.border-bottom(type="text" id="searchContact" class="form-control" placeholder="Поиск по сообщениям")
 each user in users
-  .list-group.list-group-flush.mb-3
-    .list-group-item.shadow-sm.contact-card
+  .list-group.list-group-flush
+    .list-group-item.shadow-sm.mb-3.contact-card
       .align-items-center.d-flex.w-100
-        img(src=user.avatar).avatar
-        .p-4.w-100
+        img(src=user.avatar).avatar.me-2
+        .p-3.w-100
           .d-flex.justify-content-between.align-items-center.flex-wrap
             a(href="#").stretched-link.contact-name
               h4.mb-1.fs-6.fw-bold #{user.name}
