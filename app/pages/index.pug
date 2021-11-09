@@ -26,8 +26,9 @@ html(lang='ru')
                       #pills-messages-tab.nav-link.text-white.d-flex.align-items-center(data-bs-toggle='pill' data-bs-target='#pills-messages' type='button' role='tab' aria-controls='pills-messages' aria-selected='false')
                         svg(height='25' width='25').me-2
                           use(xlink:href='images/icons/sprite.svg#chat')
-                        a.nav-link-text.small.stretched-link(href="#chats")
-                          span.d-none.d-md-block Сообщения
+                        .nav
+                          a.nav-link-text.small.stretched-link(href="#chats")
+                            span.d-none.d-md-block Сообщения
                     li.nav-item.position-relative(role='presentation')
                       #pills-profile-tab.nav-link.text-white.d-flex.align-items-center(data-bs-toggle='pill' data-bs-target='#pills-profile' type='button' role='tab' aria-controls='pills-profile' aria-selected='false')
                         svg(height='25' width='25').me-2
