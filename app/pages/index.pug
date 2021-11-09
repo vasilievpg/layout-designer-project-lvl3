@@ -4,8 +4,8 @@ html(lang='ru')
     include blocks/meta
     link(rel="stylesheet", href="/build/styles/app.css")
     title Главная
-  body.py-md-5.bg-gray.vh-100
-    .container.bg-white.h-100.overflow-hidden.radius-md
+  body.py-md-5.bg-gray.vh-100.px-md-4
+    .container-fluid.bg-white.h-100.overflow-hidden.radius-md
       .row.h-100
         .col-md-4.h-100.d-flex.flex-column-reverse.flex-md-column.border-right-md
           header
@@ -38,7 +38,7 @@ html(lang='ru')
             .col.px-4.h-100
               #pills-tabContent.tab-content.h-100
                 #pills-contacts.tab-pane.fade.show.active.h-100.overflow-scroll.hide-scrollbar.position-relative(role='tabpanel' aria-labelledby='pills-contacts-tab')
-                  .position-absolute.w-100.top-0.pt-7
+                  .position-absolute.w-100.top-0.pt-6
                     include blocks/contacts
                 #pills-messages.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar.position-relative(role='tabpanel' aria-labelledby='pills-messages-tab')
                   .position-absolute.w-100.top-0.pt-7
@@ -46,5 +46,5 @@ html(lang='ru')
                 #pills-profile.tab-pane.fade.h-100.overflow-scroll.hide-scrollbar.position-relative(role='tabpanel' aria-labelledby='pills-profile-tab')
                   .position-absolute.w-100.top-0.pt-7
                     include blocks/profile
-        .d-none.d-md-block.col-md-8.container-xxl.h-100
+        .d-none.d-md-block.col-md-8.h-100
           include blocks/right-side
