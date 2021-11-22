@@ -1,9 +1,9 @@
 .contact-card:hover {
-  background-color: map-get($theme-colors, 'primary');
+  background-color: map-get($theme-colors, "primary");
 }
 
 .contact-card:hover * {
-  color: map-get($theme-colors, 'light') !important;
+  color: map-get($theme-colors, "light") !important;
 }
 
 .contact-name {
