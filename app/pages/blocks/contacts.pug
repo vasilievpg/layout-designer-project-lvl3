@@ -36,7 +36,7 @@
     }],
   }
 
-h2.fw-bold.mb-5.h1 Контакты
+h2.fw-bold.mb-5.h2 Контакты
 form.mb-8.mb-md-7
   label(for="searchContact").d-none
   input.ps-4.pb-3.pt-3.border-0.border-bottom(type="text" id="searchContact" class="form-control" placeholder="Поиск по контактам")
@@ -47,7 +47,7 @@ each users, char in contacts
       .list-group-item.shadow-sm.mb-7.contact-card
         .align-items-center.d-flex
           img(src=user.avatar).avatar.me-2
-          .ps-3.pt-2.pb-4
+          .ps-3.pt-3.pb-3
             a(href="#").stretched-link.contact-name
               h4.mb-1.fs-6.fw-bold #{user.name}
             .small-text.mb-0.text-muted #{user.status}
