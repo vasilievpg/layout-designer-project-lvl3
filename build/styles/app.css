@@ -8597,30 +8597,6 @@ textarea.form-control-lg {
   border: 1px solid #efefef !important;
 }
 
-.zi-n1 {
-  z-index: -1 !important;
-}
-
-.zi-0 {
-  z-index: 0 !important;
-}
-
-.zi-1 {
-  z-index: 1 !important;
-}
-
-.zi-2 {
-  z-index: 2 !important;
-}
-
-.zi-3 {
-  z-index: 3 !important;
-}
-
-.zi-999 {
-  z-index: 999 !important;
-}
-
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
