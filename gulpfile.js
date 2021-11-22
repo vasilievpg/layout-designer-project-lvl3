@@ -123,4 +123,4 @@ exports.svg2sprite = svg2sprite;
 exports.cleanbuild = cleanbuild;
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = series(parallel(cleanbuild, svg2sprite, sass2css, pug2html, images, scripts), parallel(browsersync, startwatch));
+exports.default = series(cleanbuild, parallel(svg2sprite, sass2css, pug2html, images, scripts), parallel(browsersync, startwatch));
